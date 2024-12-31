@@ -1,85 +1,44 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Thiết lập thẻ UTM cho Google và Facebook Ads
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Thiết lập thẻ UTM trong Bitrix24
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Ý nghĩa của các thẻ UTM
 
-## Description
+- **utm_source**: Cho biết khách truy cập đến từ đâu. Ví dụ: email hoặc dịch vụ quảng cáo.
+- **utm_content**: Phân biệt các nội dung hoặc liên kết tương tự trong cùng một quảng cáo.
+- **{campaignid}**: Đánh dấu chiến dịch mà quảng cáo của bạn xuất hiện.
+- **{adgroupid}**: Hiển thị nhóm quảng cáo mà quảng cáo của bạn thuộc về.
+- **{targetid}**: Xác định từ khóa.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Bạn có thể thiết lập thẻ UTM cho quảng cáo Facebook theo cách tương tự.
 
-## Project setup
+## Thiết lập thẻ UTM trong Google Ads
 
-```bash
-$ npm install
+Để gửi dữ liệu chiến dịch đến tài khoản của bạn, hãy thiết lập các thẻ UTM thích hợp.
+
+Khi tạo chiến dịch quảng cáo mới, nhập địa chỉ website của bạn với các thẻ UTM chính xác vào trường Final URL:
+```
+https://example.com/?utm_source=google&utm_content=cid|{campaignid}|gid|{adgroupid}|kwid|{targetid}
 ```
 
-## Compile and run the project
+Bạn cũng có thể tạo mẫu theo dõi để áp dụng cùng một URL cuối cùng với thẻ UTM cho nhóm quảng cáo, chiến dịch hoặc tài khoản. Mẫu sẽ tự động áp dụng cho tất cả quảng cáo, tùy thuộc vào cài đặt của nó.
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+Trong trường mẫu theo dõi, chỉ định liên kết với thẻ UTM của bạn:
+```
+{lpurl}?utm_source=google&utm_content=cid|{campaignid}|gid|{adgroupid}|kwid|{targetid}
 ```
 
-## Run tests
+## Thiết lập thẻ UTM trong Facebook
 
-```bash
-# unit tests
-$ npm run test
+Thẻ UTM trong quảng cáo Facebook truyền dữ liệu để xây dựng báo cáo chi phí quảng cáo chi tiết. Thiết lập thẻ UTM trong quá trình tạo quảng cáo trong Facebook Ads Manager.
 
-# e2e tests
-$ npm run test:e2e
+1. Chỉ định địa chỉ trang web của bạn và nhấp vào Build a URL parameter.
+2. Điền vào các trường tương ứng.
+3. Nhấp vào Apply, và các lượt nhấp vào quảng cáo của bạn sẽ bao gồm các tham số cần thiết để phân tích chi phí quảng cáo chi tiết.
 
-# test coverage
-$ npm run test:cov
-```
+## Tóm tắt
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- Để phân tích chi phí quảng cáo chính xác, hãy thiết lập thẻ UTM trong Bitrix24 và các dịch vụ quảng cáo như Google Ads và Facebook.
+- Trong Bitrix24, kết nối Google Ads và Facebook như các nguồn lưu lượng truy cập, sao chép thẻ UTM và thêm chúng vào địa chỉ website của bạn.
+- Đối với Google Ads, bao gồm thẻ UTM trong trường Final URL hoặc sử dụng mẫu theo dõi để áp dụng cùng một URL cuối cùng với thẻ UTM cho nhóm quảng cáo, chiến dịch hoặc tài khoản.
+- Trong Facebook Ads Manager, thiết lập thẻ UTM trong quá trình tạo quảng cáo để đảm bảo báo cáo chi phí quảng cáo chi tiết.
