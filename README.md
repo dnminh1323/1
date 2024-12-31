@@ -1,44 +1,45 @@
-# Thiết lập thẻ UTM cho Google và Facebook Ads
+# Quy trình làm việc trong Bitrix24
 
-## Thiết lập thẻ UTM trong Bitrix24
+## Giới thiệu về Quy trình làm việc
 
-### Ý nghĩa của các thẻ UTM
+Quy trình làm việc giúp tự động hóa các công việc hàng ngày. Chúng giúp dễ dàng hơn trong việc phê duyệt tài liệu trong công ty, giao tiếp với khách hàng và kiểm soát bán hàng. Ví dụ, bạn có thể cấu hình tự động phê duyệt hóa đơn, gửi thông báo cho khách hàng về trạng thái đơn hàng của họ, hoặc tự động tạo nhiệm vụ cho nhân viên.
 
-- **utm_source**: Cho biết khách truy cập đến từ đâu. Ví dụ: email hoặc dịch vụ quảng cáo.
-- **utm_content**: Phân biệt các nội dung hoặc liên kết tương tự trong cùng một quảng cáo.
-- **{campaignid}**: Đánh dấu chiến dịch mà quảng cáo của bạn xuất hiện.
-- **{adgroupid}**: Hiển thị nhóm quảng cáo mà quảng cáo của bạn thuộc về.
-- **{targetid}**: Xác định từ khóa.
+## Các trường điều khiển quy trình làm việc
 
-Bạn có thể thiết lập thẻ UTM cho quảng cáo Facebook theo cách tương tự.
+Danh sách chứa thông tin chính về quy trình làm việc: ngày hoạt động cuối cùng, nhân viên phê duyệt quy trình, trạng thái và thời gian thực hiện.
 
-## Thiết lập thẻ UTM trong Google Ads
+### Hoạt động
+- Ngày và thời gian thay đổi cuối cùng trong quy trình làm việc
+- Có hai loại bộ đếm trong trường Hoạt động
+- Ví dụ: khi nhân viên bắt đầu quy trình Công tác và để lại bình luận, người phụ trách sẽ thấy cả hai bộ đếm: đỏ và xanh
+- Phần Quy trình làm việc hiển thị tổng số của cả bộ đếm đỏ và xanh
 
-Để gửi dữ liệu chiến dịch đến tài khoản của bạn, hãy thiết lập các thẻ UTM thích hợp.
+### Người tham gia
+- Hiển thị người tham gia quy trình và tổng thời gian họ dành ra
+- Thời gian thực hiện mỗi bước được làm tròn theo quy tắc toán học
+- Chỉ có thể chỉ định một đơn vị thời gian: giây, phút, giờ, ngày hoặc tháng
 
-Khi tạo chiến dịch quảng cáo mới, nhập địa chỉ website của bạn với các thẻ UTM chính xác vào trường Final URL:
-```
-https://example.com/?utm_source=google&utm_content=cid|{campaignid}|gid|{adgroupid}|kwid|{targetid}
-```
+### Trạng thái
+- Chứa các nút để thực hiện quy trình
+- Nếu quy trình đã bị từ chối, hoãn lại hoặc hoàn thành, trạng thái của nó sẽ được hiển thị
 
-Bạn cũng có thể tạo mẫu theo dõi để áp dụng cùng một URL cuối cùng với thẻ UTM cho nhóm quảng cáo, chiến dịch hoặc tài khoản. Mẫu sẽ tự động áp dụng cho tất cả quảng cáo, tùy thuộc vào cài đặt của nó.
+### Thời gian
+- Tổng thời gian của quy trình và nhật ký
+- Chỉ một đơn vị thời gian có thể được chỉ định: giây, phút, giờ, ngày hoặc tháng
+- Thời gian được làm tròn lên
+- Nhật ký ghi lại tất cả hoạt động, người tham gia và hiệu quả
+- Độ chính xác của thời gian trung bình tăng lên theo số lượng quy trình đã hoàn thành
+- Thời gian thực hiện trong nhật ký được tính từ khi bắt đầu đến khi hoàn thành và được làm tròn xuống
 
-Trong trường mẫu theo dõi, chỉ định liên kết với thẻ UTM của bạn:
-```
-{lpurl}?utm_source=google&utm_content=cid|{campaignid}|gid|{adgroupid}|kwid|{targetid}
-```
+## Cách hoàn thành nhiệm vụ trong quy trình làm việc
 
-## Thiết lập thẻ UTM trong Facebook
+Nhiệm vụ là các hành động cần thực hiện trong quy trình làm việc, và chúng có thể là tuần tự hoặc song song.
 
-Thẻ UTM trong quảng cáo Facebook truyền dữ liệu để xây dựng báo cáo chi phí quảng cáo chi tiết. Thiết lập thẻ UTM trong quá trình tạo quảng cáo trong Facebook Ads Manager.
+### Nhiệm vụ tuần tự
+- Hoàn thành trực tiếp từ biểu mẫu quy trình làm việc
+- Mở biểu mẫu, xem xét nhiệm vụ, hoàn thành nó, sau đó chuyển sang nhiệm vụ tiếp theo
 
-1. Chỉ định địa chỉ trang web của bạn và nhấp vào Build a URL parameter.
-2. Điền vào các trường tương ứng.
-3. Nhấp vào Apply, và các lượt nhấp vào quảng cáo của bạn sẽ bao gồm các tham số cần thiết để phân tích chi phí quảng cáo chi tiết.
-
-## Tóm tắt
-
-- Để phân tích chi phí quảng cáo chính xác, hãy thiết lập thẻ UTM trong Bitrix24 và các dịch vụ quảng cáo như Google Ads và Facebook.
-- Trong Bitrix24, kết nối Google Ads và Facebook như các nguồn lưu lượng truy cập, sao chép thẻ UTM và thêm chúng vào địa chỉ website của bạn.
-- Đối với Google Ads, bao gồm thẻ UTM trong trường Final URL hoặc sử dụng mẫu theo dõi để áp dụng cùng một URL cuối cùng với thẻ UTM cho nhóm quảng cáo, chiến dịch hoặc tài khoản.
-- Trong Facebook Ads Manager, thiết lập thẻ UTM trong quá trình tạo quảng cáo để đảm bảo báo cáo chi phí quảng cáo chi tiết.
+### Nhiệm vụ song song
+- Có thể hoàn thành từ biểu mẫu quy trình hoặc nhật ký
+- Để bắt đầu một nhiệm vụ cụ thể, mở nhật ký, chọn nó và nhấp vào Bắt đầu
+- Nếu thứ tự không quan trọng, sử dụng biểu mẫu quy trình như với nhiệm vụ tuần tự
